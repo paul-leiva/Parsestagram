@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
@@ -66,5 +67,13 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }
         }
+    }
+    public void clear() {
+        posts.clear();
+        notifyDataSetChanged();
+    }
+    public void addAll(List<Post> posts) {
+        posts.addAll(posts);
+        notifyDataSetChanged();
     }
 }
